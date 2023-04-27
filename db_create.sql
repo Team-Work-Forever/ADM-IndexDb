@@ -2,49 +2,48 @@
 USE [db_index]
 GO
 
-/****** Object:  Table [dbo].[Course]    Script Date: 27/04/2023 14:24:10 ******/
+/****** Object:  Table [dbo].[Course]    Script Date: 27/04/2023 15:28:43 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[Course]
-(
+CREATE TABLE [dbo].[Course](
 	[code] [char](4) NOT NULL,
-	[name] [varchar](100) NOT NULL,
-	[description] [varchar](100) NULL,
-	CONSTRAINT [PK_Course] PRIMARY KEY CLUSTERED 
+	[title] [varchar](100) NOT NULL,
+	[description] [varchar](max) NULL,
+	[acronym] [varchar](10) NULL,
+ CONSTRAINT [PK_Course] PRIMARY KEY CLUSTERED 
 (
 	[code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-
-
-USE [db_index]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
 
 -- Tabela Disciplina
-/****** Object:  Table [dbo].[Class]    Script Date: 27/04/2023 14:26:06 ******/
+USE [db_index]
+GO
+
+/****** Object:  Table [dbo].[Class]    Script Date: 27/04/2023 15:27:24 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[Class]
-(
+CREATE TABLE [dbo].[Class](
 	[code] [char](7) NOT NULL,
-	[name] [varchar](100) NOT NULL,
-	[description] [varchar](100) NULL,
+	[title] [varchar](100) NOT NULL,
+	[description] [varchar](max) NULL,
 	[code_course] [char](4) NOT NULL,
-	CONSTRAINT [PK_Class] PRIMARY KEY CLUSTERED 
+	[acronym] [varchar](10) NULL,
+ CONSTRAINT [PK_Class] PRIMARY KEY CLUSTERED 
 (
 	[code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
 ALTER TABLE [dbo].[Class]  WITH CHECK ADD  CONSTRAINT [FK_Class_Class] FOREIGN KEY([code_course])
@@ -59,18 +58,17 @@ GO
 USE [db_index]
 GO
 
-/****** Object:  Table [dbo].[IndexType]    Script Date: 27/04/2023 14:26:27 ******/
+/****** Object:  Table [dbo].[IndexType]    Script Date: 27/04/2023 15:29:08 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[IndexType]
-(
+CREATE TABLE [dbo].[IndexType](
 	[id] [int] IDENTITY(1,1) NOT NULL,
-	[name] [varchar](100) NOT NULL,
-	CONSTRAINT [PK_IndexType] PRIMARY KEY CLUSTERED 
+	[title] [varchar](100) NOT NULL,
+ CONSTRAINT [PK_IndexType] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
@@ -78,24 +76,24 @@ CREATE TABLE [dbo].[IndexType]
 GO
 
 
+
 -- Tabela Indicador
 USE [db_index]
 GO
 
-/****** Object:  Table [dbo].[Class_IndexType]    Script Date: 27/04/2023 14:26:49 ******/
+/****** Object:  Table [dbo].[Class_IndexType]    Script Date: 27/04/2023 15:28:03 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[Class_IndexType]
-(
-	[year] [char](5) NOT NULL,
+CREATE TABLE [dbo].[Class_IndexType](
+	[year] [char](6) NOT NULL,
 	[id_index_type] [int] NOT NULL,
 	[code_class] [char](7) NOT NULL,
 	[value] [decimal](18, 2) NOT NULL,
-	CONSTRAINT [PK_Class_IndexType] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_Class_IndexType] PRIMARY KEY CLUSTERED 
 (
 	[year] ASC,
 	[id_index_type] ASC,
@@ -117,3 +115,13 @@ GO
 
 ALTER TABLE [dbo].[Class_IndexType] CHECK CONSTRAINT [FK_Class_IndexType_IndexType]
 GO
+
+ALTER TABLE [dbo].[Class_IndexType]  WITH CHECK ADD  CONSTRAINT [CK_Class_IndexType] CHECK  (([value]>=(0)))
+GO
+
+ALTER TABLE [dbo].[Class_IndexType] CHECK CONSTRAINT [CK_Class_IndexType]
+GO
+
+
+
+
