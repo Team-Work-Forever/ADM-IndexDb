@@ -2,7 +2,7 @@
 USE [db_index]
 GO
 
-/****** Object:  Table [dbo].[Course]    Script Date: 27/04/2023 15:28:43 ******/
+/****** Object:  Table [dbo].[Course]    Script Date: 01/05/2023 20:54:29 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -11,7 +11,7 @@ GO
 
 CREATE TABLE [dbo].[Course](
 	[code] [char](4) NOT NULL,
-	[title] [varchar](100) NOT NULL,
+	[title] [varchar](200) NOT NULL,
 	[description] [varchar](max) NULL,
 	[acronym] [varchar](10) NULL,
  CONSTRAINT [PK_Course] PRIMARY KEY CLUSTERED 
@@ -21,12 +21,11 @@ CREATE TABLE [dbo].[Course](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
-
 -- Tabela Disciplina
 USE [db_index]
 GO
 
-/****** Object:  Table [dbo].[Class]    Script Date: 27/04/2023 15:27:24 ******/
+/****** Object:  Table [dbo].[Class]    Script Date: 01/05/2023 20:55:15 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -35,7 +34,7 @@ GO
 
 CREATE TABLE [dbo].[Class](
 	[code] [char](7) NOT NULL,
-	[title] [varchar](100) NOT NULL,
+	[title] [varchar](200) NOT NULL,
 	[description] [varchar](max) NULL,
 	[code_course] [char](4) NOT NULL,
 	[acronym] [varchar](10) NULL,
