@@ -14,7 +14,7 @@ CREATE TABLE [dbo].[Course]
 	[code] [char](4) NOT NULL,
 	[title] [varchar](200) NOT NULL,
 	[description] [varchar](max) NULL,
-	[acronym] [varchar](10) NULL,
+	[acronym] [varchar](15) NULL,
 	CONSTRAINT [PK_Course] PRIMARY KEY CLUSTERED 
 (
 	[code] ASC
@@ -39,7 +39,7 @@ CREATE TABLE [dbo].[Class]
 	[title] [varchar](200) NOT NULL,
 	[description] [varchar](max) NULL,
 	[code_course] [char](4) NOT NULL,
-	[acronym] [varchar](10) NULL,
+	[acronym] [varchar](15) NULL,
 	CONSTRAINT [PK_Class] PRIMARY KEY CLUSTERED 
 (
 	[code] ASC

@@ -500,7 +500,7 @@ VALUES
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
-    ('1005804', 'Motores, Tratores e Operação de Máquinas', 'MTEODM', 5022)
+    ('1005804', 'Motores Tratores e Operação de Máquinas', 'MTEODM', 5022)
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
@@ -520,7 +520,7 @@ VALUES
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
-    ('1005809', 'Produção de Suínos, Aves e Coelhos', 'PDSAEC')
+    ('1005809', 'Produção de Suínos, Aves e Coelhos', 'PDSAEC', 5022)
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
@@ -751,7 +751,7 @@ VALUES
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
-    ('1009603', 'Protecção das Culturas no Modo de Produção Biológico', 'PROCUL')
+    ('1009603', 'Protecção das Culturas no Modo de Produção Biológico', 'PROCUL', 6799)
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
@@ -767,11 +767,11 @@ VALUES
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
-    ('1009607', 'Olericultura e Plantas Aromáticas e Medicinais no Modo de Produção Biológico', 'OPAMMPB')
+    ('1009607', 'Olericultura e Plantas Aromáticas e Medicinais no Modo de Produção Biológico', 'OPAMMPB', 6799)
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
-    ('1009608', 'Fruticultura, Viticultura e Olivicultura no Modo de Produção Biológico', 'FRUVIT')
+    ('1009608', 'Fruticultura, Viticultura e Olivicultura no Modo de Produção Biológico', 'FRUVIT', 6799)
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
@@ -783,15 +783,15 @@ VALUES
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
-    ('1009611', 'Sistemas e Infra-Estruturas de Informação Geográfica (Opção)', 'SISINF')
+    ('1009611', 'Sistemas e Infra-Estruturas de Informação Geográfica (Opção)', 'SISINF', 6799)
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
-    ('1009612', 'Transformação e Segurança Alimentar (Opção)', 'TRASEG')
+    ('1009612', 'Transformação e Segurança Alimentar (Opção)', 'TRASEG', 6799)
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
-    ('1009613', 'Dissertação/Projecto/Estágio', 'DIS')
+    ('1009613', 'Dissertação/Projecto/Estágio', 'DIS', 6799)
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
@@ -2423,7 +2423,7 @@ VALUES
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
-    ('2708213', 'Artes Plásticas nos Primeiros Anos', 'APn')
+    ('2708213', 'Artes Plásticas nos Primeiros Anos', 'APn', 69)
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
@@ -2447,7 +2447,7 @@ VALUES
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
-    ('2708220', 'Literatura e Imaginação em Espaços Escolares', 'LEIEEE')
+    ('2708220', 'Literatura e Imaginação em Espaços Escolares', 'LEIEEE', 69)
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
@@ -2707,7 +2707,7 @@ VALUES
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
-    ('3002984', 'Análise e Gestão de Risco', 'ANAGES')
+    ('3002984', 'Análise e Gestão de Risco', 'ANAGES', 6395)
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
@@ -6739,7 +6739,7 @@ VALUES
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
-    ('4010006', 'Optativa - Gestão de Armazéns e Inventários', 'OPTGES')
+    ('4010006', 'Optativa - Gestão de Armazéns e Inventários', 'OPTGES', 110)
 INSERT into dbo.Class
     (code, title, acronym, code_course)
 VALUES
