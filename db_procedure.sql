@@ -1,5 +1,5 @@
 -- Store Procedure que verifica se tipo de informação existe recebe uma string (tipo de estatística) e @resultMessage = @message OUTPUT
-CREATE PROCEDURE VerifyResultType
+CREATE OR ALTER PROCEDURE VerifyResultType
     @type VARCHAR(100),
     @resultMessage VARCHAR(200) OUTPUT
 AS
@@ -7,7 +7,6 @@ BEGIN
 
     DECLARE @typeExists BIT;
 
-    -- Verificar se o tipo de estatística existe
     SELECT @typeExists = CASE WHEN EXISTS (
         SELECT 1
         FROM dbo.IndexType
