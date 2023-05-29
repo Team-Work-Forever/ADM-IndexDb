@@ -36,4 +36,14 @@ BEGIN
 END
 GO
 
-INSERT INTO DBO.CLASS VALUES ('XXXX', 'XXXXXX', 'XXXXXXXXXXX', 'XXXX', 'XXXXX');
+-- TEST
+
+INSERT into dbo.Course
+    (code, title, acronym)
+VALUES
+    ('5002', 'Cuidados Veterinários', 'CUVE');
+
+INSERT into dbo.Class
+    (code, title, acronym, code_course)
+VALUES
+    ('1005401', 'Anatomia e fisiologia animal', 'AFA', 5002);
