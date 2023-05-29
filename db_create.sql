@@ -23,8 +23,7 @@ CREATE TABLE [dbo].[Course]
 GO
 
 -- Tabela Disciplina
-USE [db_index]
-GO
+
 
 /****** Object:  Table [dbo].[Class]    Script Date: 01/05/2023 20:55:15 ******/
 SET ANSI_NULLS ON
@@ -56,8 +55,7 @@ GO
 
 
 -- Tabela Tipo Indicador
-USE [db_index]
-GO
+
 
 /****** Object:  Table [dbo].[IndexType]    Script Date: 27/04/2023 15:29:08 ******/
 SET ANSI_NULLS ON
@@ -80,8 +78,7 @@ GO
 
 
 -- Tabela Indicador
-USE [db_index]
-GO
+
 
 /****** Object:  Table [dbo].[Class_IndexType]    Script Date: 27/04/2023 15:28:03 ******/
 SET ANSI_NULLS ON

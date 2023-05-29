@@ -1,0 +1,10 @@
+{
+    "TABLE" : "Cursos",
+    "ACTION" : "SELECT",
+    "COLUNS" : [
+        "name",
+        "age",
+        "..."
+    ],
+    "DB_USER" : "DB_MANAGER"
+}
