@@ -9,12 +9,13 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[Course](
+CREATE TABLE [dbo].[Course]
+(
 	[code] [char](4) NOT NULL,
 	[title] [varchar](200) NOT NULL,
 	[description] [varchar](max) NULL,
 	[acronym] [varchar](10) NULL,
- CONSTRAINT [PK_Course] PRIMARY KEY CLUSTERED 
+	CONSTRAINT [PK_Course] PRIMARY KEY CLUSTERED 
 (
 	[code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
@@ -22,8 +23,7 @@ CREATE TABLE [dbo].[Course](
 GO
 
 -- Tabela Disciplina
-USE [db_index]
-GO
+
 
 /****** Object:  Table [dbo].[Class]    Script Date: 01/05/2023 20:55:15 ******/
 SET ANSI_NULLS ON
@@ -32,13 +32,14 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[Class](
+CREATE TABLE [dbo].[Class]
+(
 	[code] [char](7) NOT NULL,
 	[title] [varchar](200) NOT NULL,
 	[description] [varchar](max) NULL,
 	[code_course] [char](4) NOT NULL,
 	[acronym] [varchar](10) NULL,
- CONSTRAINT [PK_Class] PRIMARY KEY CLUSTERED 
+	CONSTRAINT [PK_Class] PRIMARY KEY CLUSTERED 
 (
 	[code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
@@ -54,8 +55,7 @@ GO
 
 
 -- Tabela Tipo Indicador
-USE [db_index]
-GO
+
 
 /****** Object:  Table [dbo].[IndexType]    Script Date: 27/04/2023 15:29:08 ******/
 SET ANSI_NULLS ON
@@ -64,10 +64,11 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[IndexType](
+CREATE TABLE [dbo].[IndexType]
+(
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[title] [varchar](100) NOT NULL,
- CONSTRAINT [PK_IndexType] PRIMARY KEY CLUSTERED 
+	CONSTRAINT [PK_IndexType] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
@@ -77,8 +78,7 @@ GO
 
 
 -- Tabela Indicador
-USE [db_index]
-GO
+
 
 /****** Object:  Table [dbo].[Class_IndexType]    Script Date: 27/04/2023 15:28:03 ******/
 SET ANSI_NULLS ON
@@ -87,12 +87,13 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[Class_IndexType](
+CREATE TABLE [dbo].[Class_IndexType]
+(
 	[year] [char](6) NOT NULL,
 	[id_index_type] [int] NOT NULL,
 	[code_class] [char](7) NOT NULL,
 	[value] [decimal](18, 2) NOT NULL,
- CONSTRAINT [PK_Class_IndexType] PRIMARY KEY CLUSTERED 
+	CONSTRAINT [PK_Class_IndexType] PRIMARY KEY CLUSTERED 
 (
 	[year] ASC,
 	[id_index_type] ASC,
