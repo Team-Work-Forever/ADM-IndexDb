@@ -43,3 +43,5 @@ GO
 
 exec dbo.sp_view_log 'table';
 go
+
+select * from dbo.log_action;
