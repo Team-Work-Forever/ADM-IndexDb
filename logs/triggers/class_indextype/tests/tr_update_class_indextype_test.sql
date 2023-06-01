@@ -1,0 +1,7 @@
+use [db_index]
+GO
+
+INSERT INTO DBO.COURSE
+VALUES
+	('XXXX', 'XXXXXX', 'XXXXXXXXXXX', 'XXXXX')
+GO

@@ -1,10 +1,4 @@
--- INSERT TRIGGER COURSES
---[year] [char](6) NOT NULL,
---[id_index_type] [int] NOT NULL,
---[code_class] [char](7) NOT NULL,
---[value] [decimal](18, 2) NULL,
-
-use [index]
+use [db_index]
 GO
 
 CREATE OR ALTER TRIGGER tr_insert_class_indextype
@@ -12,12 +6,14 @@ CREATE OR ALTER TRIGGER tr_insert_class_indextype
 	AFTER INSERT
 AS
 BEGIN
-	
+
+	DECLARE @system_user varchar(100) = SYSTEM_USER;
+
 	DECLARE @year char(6);
 	DECLARE @id_index_type int;
 	DECLARE @code_class  char(7);
 	DECLARE @value  decimal(18, 2);
-	
+
 	SELECT
 		@year = [year],
 		@id_index_type = id_index_type,
@@ -26,12 +22,9 @@ BEGIN
 	FROM inserted;
 
 	-- Create Log of INSERT
-	exec dbo.sp_add_log 1, 'user', 'Class_IndexType', 'year,id_index_type,code_class,value';
+	exec dbo.sp_add_log 1, @system_user, 'Class_IndexType', 'year,id_index_type,code_class,value';
 
 	RETURN;
 
 END
 GO
-
--- TEST
-
