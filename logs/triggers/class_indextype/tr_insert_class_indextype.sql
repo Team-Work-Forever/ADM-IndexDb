@@ -24,6 +24,7 @@ BEGIN
 	-- Create Log of INSERT
 	exec dbo.sp_add_log 1, @system_user, 'Class_IndexType', 'year,id_index_type,code_class,value';
 
+
 	RETURN;
 
 END

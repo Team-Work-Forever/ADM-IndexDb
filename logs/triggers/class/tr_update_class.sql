@@ -68,6 +68,7 @@ BEGIN
 
 	-- Create Log of INSERT
 	exec dbo.sp_add_log 2, @system_user, 'Class', @updated_fields;
+
 	RETURN;
 
 END

@@ -1,4 +1,5 @@
 use [db_index]
+
 GO
 
 CREATE OR ALTER TRIGGER tr_update_class_indextype
@@ -59,6 +60,7 @@ BEGIN
 
 	-- Create Log of INSERT
 	exec dbo.sp_add_log 2, @system_user, 'Class_IndexType', @updated_fields;
+
 	RETURN;
 
 END

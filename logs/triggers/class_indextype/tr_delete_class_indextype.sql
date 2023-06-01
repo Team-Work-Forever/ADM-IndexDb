@@ -1,5 +1,4 @@
 use [db_index]
-GO
 
 CREATE OR ALTER TRIGGER tr_delete_class_indextype
 	ON dbo.Class_IndexType
@@ -23,7 +22,9 @@ BEGIN
 
 
 	-- Create Log of DELETED
+
 	exec dbo.sp_add_log 3, @system_user, 'Class_IndexType', 'year,id_index_type,code_class,value';
+
 
 	RETURN;
 

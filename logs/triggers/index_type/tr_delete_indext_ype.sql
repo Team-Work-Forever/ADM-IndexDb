@@ -20,9 +20,8 @@ BEGIN
 	-- Create Log of DELETED
 	exec dbo.sp_add_log 3, @system_user, 'IndexType', 'id,title';
 
+
 	RETURN;
 
 END
 GO
-
--- TEST

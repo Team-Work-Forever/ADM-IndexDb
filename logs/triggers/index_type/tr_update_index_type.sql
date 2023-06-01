@@ -42,9 +42,8 @@ BEGIN
 
 	-- Create Log of INSERT
 	exec dbo.sp_add_log 2, @system_user, 'IndexType', @updated_fields;
+
 	RETURN;
 
 END
 GO
-
--- Test
