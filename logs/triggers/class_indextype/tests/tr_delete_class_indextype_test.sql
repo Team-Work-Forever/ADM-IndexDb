@@ -1,0 +1,8 @@
+use [db_index]
+GO
+
+DELETE FROM DBO.COURSE
+GO
+
+DELETE FROM DBO.Class WHERE CODE = '1005401'
+GO
