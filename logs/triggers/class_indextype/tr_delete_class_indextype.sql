@@ -1,4 +1,5 @@
 use [db_index]
+GO
 
 CREATE OR ALTER TRIGGER tr_delete_class_indextype
 	ON dbo.Class_IndexType

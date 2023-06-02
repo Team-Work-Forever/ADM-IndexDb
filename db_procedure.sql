@@ -25,6 +25,6 @@ END;
 GO
 
 
-DECLARE @message VARCHAR(200);
-EXEC VerifyResultType 'Disciplina com mais alunos', @resultMessage = @message OUTPUT;
-SELECT @message;
+-- DECLARE @message VARCHAR(200);
+-- EXEC VerifyResultType 'Disciplina com mais alunos', @resultMessage = @message OUTPUT;
+-- SELECT @message;

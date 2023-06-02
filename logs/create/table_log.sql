@@ -1,4 +1,4 @@
-USE [index]
+USE [db_index]
 GO
 
 /****** Object:  Table [dbo].[Course]    Script Date: 01/05/2023 20:54:29 ******/

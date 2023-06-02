@@ -16,4 +16,4 @@ END;
 
 
 
-EXEC dbo.SendNotificationEmail 'davidbraga@ipvc.pt', 'Assunto da notificação', 'Corpo da notificação';
+-- EXEC dbo.SendNotificationEmail 'davidbraga@ipvc.pt', 'Assunto da notificação', 'Corpo da notificação';
