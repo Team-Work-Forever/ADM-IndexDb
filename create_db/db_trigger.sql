@@ -10,7 +10,7 @@ BEGIN
         INNER JOIN inserted i ON c.code = i.code_course
     )
     BEGIN
-        PRINT 'Código do curso inválido.';
+        RAISERROR ('Código do curso inválido.',16, 1);
         ROLLBACK;
         RETURN;
     END;

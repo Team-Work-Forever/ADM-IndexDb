@@ -64,7 +64,10 @@ BEGIN
 		SET @updated_fields = @updated_fields + ',' + 'code_course'
 	END
 
-	SET @updated_fields = SUBSTRING(@updated_fields, 2, LEN(@updated_fields) - 1);
+	IF (LEN(@updated_fields) > 0)  -- Check if @updated_fields is not empty
+	BEGIN
+		SET @updated_fields = SUBSTRING(@updated_fields, 2, LEN(@updated_fields) - 1);
+	END
 
 	-- Create Log of INSERT
 	exec dbo.sp_add_log 2, @system_user, 'Class', @updated_fields;
