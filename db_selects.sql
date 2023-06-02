@@ -13,10 +13,10 @@ AS
     WHERE ci.[value] IS NOT NULL AND ci.id_index_type = 1
 GO
 
-SELECT *
-FROM rankMediasClass
-ORDER BY [year] DESC;
-GO
+-- SELECT *
+-- FROM rankMediasClass
+-- ORDER BY [year] DESC;
+-- GO
 
 -- View para ver média dos cursos no ano letivo 2022/23, onde a média é superior a 9,5
 CREATE OR ALTER view showPositiveAverageCourses
@@ -37,7 +37,7 @@ AS
     HAVING AVG(ci.[value]) > 9.5
 GO
 
-SELECT *
-FROM showPositiveAverageCourses
-ORDER BY AverageCourse DESC
-GO
+-- SELECT *
+-- FROM showPositiveAverageCourses
+-- ORDER BY AverageCourse DESC
+-- GO

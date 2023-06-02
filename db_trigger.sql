@@ -38,13 +38,13 @@ END;
 
 
 -- Experimentar
-INSERT into dbo.Class
-    (code, title, acronym, code_course)
-VALUES
-    ('23435', 'Matemática Aplicada', 'MATAP', 1)
+-- INSERT into dbo.Class
+--     (code, title, acronym, code_course)
+-- VALUES
+--     ('23435', 'Matemática Aplicada', 'MATAP', 1)
 
-delete from dbo.Class where code = '23435'
+-- delete from dbo.Class where code = '23435'
 
-select *
-from dbo.Class
-where code = '23435'
+-- select *
+-- from dbo.Class
+-- where code = '23435'
