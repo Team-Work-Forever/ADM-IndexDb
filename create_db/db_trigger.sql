@@ -24,8 +24,8 @@ END;
 -- VALUES
 --     ('23435', 'Matemática Aplicada', 'MATAP', 110)
 
--- delete from dbo.Class where code = '23435'
+-- -- delete from dbo.Class where code = '23435'
 
--- select *
--- from dbo.Class
--- where code = '23435'
+-- -- select *
+-- -- from dbo.Class
+-- -- where code = '23435'
