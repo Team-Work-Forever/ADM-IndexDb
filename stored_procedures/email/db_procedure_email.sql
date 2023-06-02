@@ -1,3 +1,6 @@
+USE [db_index]
+GO
+
 CREATE OR ALTER PROCEDURE dbo.SendNotificationEmail
     @RecipientEmail NVARCHAR(100),
     @Subject NVARCHAR(100),
@@ -13,7 +16,3 @@ BEGIN
         @subject = @MailSubject,
         @body = @MailBody;
 END;
-
-
-
--- EXEC dbo.SendNotificationEmail 'davidbraga@ipvc.pt', 'Assunto da notificação', 'Corpo da notificação';

@@ -20,6 +20,7 @@ BEGIN
 	-- Create Log of DELETED
 	exec dbo.sp_add_log 3, @system_user, 'IndexType', 'id,title';
 
+	EXEC dbo.SendNotificationEmail 'diogoassuncao@ipvc.pt', 'Eliminação de uma Linha na Tabela Class_IndexType', N'';
 
 	RETURN;
 
