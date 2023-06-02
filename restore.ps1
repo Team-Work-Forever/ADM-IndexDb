@@ -5,9 +5,9 @@ $Instance = [Environment]::GetEnvironmentVariable($variableName, "User")
 
 function restore {
 
-    Invoke-Sqlcmd -InputFile .\db_drop.sql -ServerInstance $Instance -Database "db_index" -Encrypt Optional -Username "sa" -Password "123456" -ErrorAction 'SilentlyContinue' 
-    Invoke-Sqlcmd -InputFile .\db_drop.sql -ServerInstance $Instance -Database "db_index" -Encrypt Optional -Username "sa" -Password "123456" -ErrorAction 'SilentlyContinue'
-    Invoke-Sqlcmd -InputFile .\db_drop.sql -ServerInstance $Instance -Database "db_index" -Encrypt Optional -Username "sa" -Password "123456" -ErrorAction 'SilentlyContinue'
+    Invoke-Sqlcmd -InputFile .\db_drop.sql -ServerInstance $Instance -Database "db_index" -Encrypt Optional -Username "sa" -Password "123456" 
+    Invoke-Sqlcmd -InputFile .\db_drop.sql -ServerInstance $Instance -Database "db_index" -Encrypt Optional -Username "sa" -Password "123456"
+    Invoke-Sqlcmd -InputFile .\db_drop.sql -ServerInstance $Instance -Database "db_index" -Encrypt Optional -Username "sa" -Password "123456"
     
     Write-Output "DB Clean"
     

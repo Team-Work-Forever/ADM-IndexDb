@@ -5,7 +5,7 @@ $Instance = [Environment]::GetEnvironmentVariable($variableName, "User")
 
 Write-Output $Instance
 
-$Directory = $args[1]
+$Directory = $args[0]
 
 function FindSqlScripts {
     param (
