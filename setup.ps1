@@ -9,9 +9,18 @@ function FindRunScripts {
         Invoke-Expression -Command (".\searchSql.ps1 ola " + $file.Directory)
     }
 
-    Write-Output "DB CREATED"
     
 }
 
-FindRunScripts .
+$variableName = "SQL_SERVER_INSTANCE_SCRIPT"
 
+if (![Environment]::GetEnvironmentVariable($variableName, "User")) {
+    $variableValue = Read-Host "Enter SQL Server Instance"
+    [Environment]::SetEnvironmentVariable($variableName, $variableValue, "User")
+    
+    FindRunScripts .
+
+}
+else {
+    FindRunScripts .
+}
