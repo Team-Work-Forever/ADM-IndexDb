@@ -1,3 +1,6 @@
+USE [db_index]
+GO
+
 -- sp to insert into class_indexType
 create or alter procedure sp_insert_class_index
     (
@@ -13,9 +16,9 @@ begin
 
     insert into dbo.Class_IndexType
     values
-        (@year, @code_class, @id_index_type, @value)
+        (@year, @id_index_type, @code_class, @value)
 
     commit;
 
 end
-go
+GO

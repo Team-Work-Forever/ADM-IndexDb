@@ -1,3 +1,6 @@
+USE [db_index]
+GO
+
 CREATE OR ALTER FUNCTION fn_convert_to_json_log
 (
     @action int, 
@@ -26,15 +29,18 @@ BEGIN
     );
 
     -- Get multiple fields
-    INSERT INTO @fieldTable (fieldName)
-    SELECT fieldName FROM dbo.split_fields(@fields, @delimiter);
-    
+    INSERT INTO @fieldTable
+        (fieldName)
+    SELECT fieldName
+    FROM dbo.split_fields(@fields, @delimiter);
+
     DECLARE @fieldName varchar(50);
     DECLARE @columnsArray nvarchar(max) = N'';
 
     DECLARE @result nvarchar(max);
 
-    DECLARE fieldCursor CURSOR FOR SELECT fieldName FROM @fieldTable;
+    DECLARE fieldCursor CURSOR FOR SELECT fieldName
+    FROM @fieldTable;
 
     OPEN fieldCursor;
 

@@ -1,3 +1,6 @@
+use [db_index]
+GO
+
 CREATE OR ALTER FUNCTION dbo.split_fields
 (
     @fields VARCHAR(MAX),

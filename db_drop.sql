@@ -32,5 +32,5 @@ EXEC sp_executesql @sql;
 SET @sql = N'';
 SELECT @sql = @sql + N'DROP INDEX ' + QUOTENAME(i.name) + N' ON ' + QUOTENAME(SCHEMA_NAME(t.schema_id)) + N'.' + QUOTENAME(t.name) + N';' + CHAR(13) + CHAR(10)
 FROM sys.indexes i
-JOIN sys.tables t ON i.object_id = t.object_id;
+    JOIN sys.tables t ON i.object_id = t.object_id;
 EXEC sp_executesql @sql;

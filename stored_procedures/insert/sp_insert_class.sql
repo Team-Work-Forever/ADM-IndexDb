@@ -1,10 +1,13 @@
--- sp to insert class
+USE [db_index]
+GO
+
 create or alter procedure sp_insert_class
     (
     @code char(4),
     @title varchar(100),
     @description varchar(MAX),
-    @course_id int
+    @code_course char,
+    @acronym varchar
 )
 as
 begin
@@ -13,9 +16,9 @@ begin
 
     insert into dbo.Class
     values
-        (@code, @title, @description, @course_id)
+        (@code, @title, @description, @code_course, @acronym)
 
     commit;
 
 end
-go
+GO

@@ -1,3 +1,6 @@
+USE [db_index]
+GO
+
 -- update indexType
 create or alter procedure sp_update_indexType
     (
@@ -10,7 +13,7 @@ begin
     begin transaction;
 
     update dbo.IndexType
-        set [name] = @title
+        set [title] = @title
     where id = @id
 
     commit;

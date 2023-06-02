@@ -1,3 +1,6 @@
+USE [db_index]
+GO
+
 -- sp to insert class
 create or alter procedure sp_update_class
     (
@@ -12,7 +15,7 @@ begin
     begin transaction;
 
     update dbo.Class
-        set [name] = @title,
+        set [title] = @title,
         [description] = @description
     where code_course = @course_id
 
