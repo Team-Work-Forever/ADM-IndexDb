@@ -1,3 +1,6 @@
+USE [db_index]
+GO
+
 -- insert into indexType
 create or alter procedure sp_insert_indexType
     (

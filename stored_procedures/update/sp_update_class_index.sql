@@ -1,3 +1,6 @@
+use [db_index]
+GO
+
 -- sp to update into class_indexType
 create or alter procedure sp_update_class_index
     (

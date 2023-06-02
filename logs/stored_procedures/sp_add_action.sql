@@ -1,4 +1,4 @@
-USE [index]
+USE [db_index]
 go
 
 -- Action

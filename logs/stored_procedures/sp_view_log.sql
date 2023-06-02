@@ -1,18 +1,18 @@
 -- sp_view_log
 
-USE [index]
+USE [db_index]
 go
 
 -- Action
 -- 0 - SELECT | 1 - INSERT | 2 - UPDATE | 3 DELETE | 4 - EXECUTE
 -- N'{"table" : "Espadas", "action" : "EXECUTE", "columns" : []}'
 CREATE OR ALTER PROCEDURE sp_view_log
-(
+	(
 	@info varchar(50)
 )
 AS
 BEGIN
-	
+
 	declare @jsonResult nvarchar(max)
 
 	DECLARE @table varchar(50);
@@ -28,8 +28,8 @@ BEGIN
 	from dbo.log_action
 
 	SELECT @table = JSON_VALUE(@jsonResult, '$.table'),
-       @action = JSON_VALUE(@jsonResult, '$.action'),
-       @columns = JSON_QUERY(@jsonResult, '$.columns');
+		@action = JSON_VALUE(@jsonResult, '$.action'),
+		@columns = JSON_QUERY(@jsonResult, '$.columns');
 
 	PRINT 'LOGS';
 	PRINT 'Table: ' + @table;
@@ -44,4 +44,5 @@ GO
 exec dbo.sp_view_log 'table';
 go
 
-select * from dbo.log_action;
+select *
+from dbo.log_action;

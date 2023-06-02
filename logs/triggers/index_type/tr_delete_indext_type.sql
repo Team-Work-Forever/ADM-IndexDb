@@ -24,5 +24,3 @@ BEGIN
 
 END
 GO
-
--- TEST

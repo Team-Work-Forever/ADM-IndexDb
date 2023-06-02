@@ -1,4 +1,4 @@
-USE [index]
+USE [db_index]
 GO
 
 CREATE OR ALTER PROCEDURE sp_get_log

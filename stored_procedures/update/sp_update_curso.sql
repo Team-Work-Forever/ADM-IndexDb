@@ -1,3 +1,6 @@
+use [db_index]
+GO
+
 -- sp to insert course
 create or alter procedure sp_update_curso
     (
@@ -11,7 +14,7 @@ begin
     begin transaction;
 
     update dbo.Course
-        set [name] = @title,
+        set [title] = @title,
         [description] = @description
     where code = @code
 
