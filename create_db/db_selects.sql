@@ -41,3 +41,67 @@ GO
 -- FROM showPositiveAverageCourses
 -- ORDER BY AverageCourse DESC
 -- GO
+
+-- View para ver o numero de aprovados por exame dos cursos de todos os anos
+CREATE OR ALTER view shownStudentsPassedExam
+AS
+    SELECT
+        ci.[year], co.title, co.acronym, co.code,
+        SUM(ci.value) AS PassedExam
+    FROM dbo.Class_IndexType ci
+        INNER JOIN dbo.Class c
+        ON c.code = ci.code_class
+        INNER JOIN dbo.Course co
+        ON co.code = c.code_course
+    WHERE ci.id_index_type = 6
+    GROUP BY co.code, co.title, co.acronym, ci.[year]
+GO
+
+
+-- SELECT *
+-- FROM shownStudentsPassedExam
+-- GO
+
+
+
+
+-- View para ver o numero de reprovados por exame dos cursos de todos os anos
+CREATE OR ALTER view shownStudentsFailedExam
+AS
+    SELECT
+        ci.[year], co.title, co.acronym, co.code,
+        SUM(ci.value) AS FailedExam
+    FROM dbo.Class_IndexType ci
+        INNER JOIN dbo.Class c
+        ON c.code = ci.code_class
+        INNER JOIN dbo.Course co
+        ON co.code = c.code_course
+    WHERE ci.id_index_type = 7
+    GROUP BY co.code, co.title, co.acronym, ci.[year]
+GO
+
+
+-- SELECT *
+-- FROM shownStudentsFailedExam
+-- GO
+
+
+
+-- Select para ver o numero de alunos inscritos em Engenharia Informática no ultimo ano letivo (202223)
+CREATE OR ALTER view numResgisteredStudentsEI2022_23
+AS
+    SELECT
+        ci.[year], co.title, co.acronym, co.code,
+        SUM(ci.value) AS ResgisteredStudents
+    FROM dbo.Class_IndexType ci
+        INNER JOIN dbo.Class c
+        ON c.code = ci.code_class
+        INNER JOIN dbo.Course co
+        ON co.code = c.code_course
+    WHERE ci.id_index_type = 4 AND co.acronym = 'EI' AND ci.[year] = 202223
+    GROUP BY ci.[year], co.code, co.title, co.acronym
+GO
+
+-- SELECT *
+-- FROM numResgisteredStudentsEI2022_23
+-- GO
